@@ -1,0 +1,64 @@
+<h3>
+	{{xyz}}
+
+</h3>
+<h2>
+	{{title}}
+</h2>
+<p>--------------------------Input Box----------------------------------</p>
+<h1>
+	<input type="text" value="angular">
+</h1>
+<p>--------------------------Class----------------------------------</p>
+<div class="myClass">Apply Class </div>
+<button onclick="console.log('Button clicked')" >
+	click1
+</button>
+<br>
+<p>--------------------------Data Binding----------------------------------</p>
+<input type="text" [(ngModel)]="fname">
+<input type="text" [(ngModel)]="lname">
+Full Name : {{fname}} {{lname}} <br>
+<p>--------------------------ngif----------------------------------</p>
+<p *ngIf="showElement">Show Element</p>
+<!--  <div [ngSwitch]="color">
+	<p *ngSwitchWhen="'red'">Red color switch</p>
+	<p *ngSwitchWhen="'blue'">Blue color switch</p>
+	<p *ngSwitchDefault>Invalid color</p>
+</div> -->
+<p>--------------------------Unorder list----------------------------------</p>
+<ul>
+	<li *ngFor="let color of colors">{{color}}</li>
+</ul>
+<br>
+<p>--------------------------Toggle Function----------------------------------</p>
+<p [ngClass]="{one:cone,two:ctwo}">ngClass</p>
+<button (click)="toggle()">Toggle</button> <br>
+<p>--------------------------Parent child component----------------------------------</p>
+
+<h2>Child tutorials Component</h2>
+Enter child tutorials component value
+<input type="text" #childtext (keyup)="onChange(childtext.value)">
+<p>Value from parent app component is </p>
+{{parentData}}
+<p>--------------------------Working on pipes(string)----------------------------------</p>
+String: {{name}} <br>
+String Uppercase: {{name | uppercase}} <br>
+String Lowercase: {{name | lowercase}} <br>
+String Slice: {{name | slice:'2':'6'}} <br>
+<!-- String Replace: {{name | replace:'good':'Very'}} -->
+<p>--------------------------Working on pipes(numbers)----------------------------------</p>
+Number: {{number}} <br>
+{{number | number:'1.2-3'}} <br>
+{{number | number:'2.2-4'}} <br>
+{{number | number:'2.4-6'}} <br>
+<p>--------------------------Working on pipes(currency)----------------------------------</p>
+{{8.99 | currency:'USD'}} <br>
+{{8.99 | currency:'USD':true}} <br>
+{{8.99 | currency:'GBP':true}} <br>
+<p>--------------------------Working on pipes(timestamp)----------------------------------</p>
+Date: {{date}} <br>
+Full Date: {{date | date:'fullDate'}} <br>
+Short Date: {{date | date:'shortDate'}} <br>
+Medium Time: {{date | date:'mediumTime'}} <br>
+Short Time: {{date | date:'shortTime'}} <br>

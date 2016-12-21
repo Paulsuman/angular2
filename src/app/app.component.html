@@ -1,3 +1,42 @@
-<h1>
+<h3>
   {{title}}
-</h1>
+</h3>
+<h2> Parent App Component </h2>
+Enter Parent App Component value
+<input type="text" #ptext (keyup)="0">
+<p>Value from child Tutorials Component is </p>
+{{childData}}
+<my-tutorials (childEvent)="childData=$event" [parentData]="ptext.value"></my-tutorials>
+<p>--------------------------Template Driven Forms----------------------------------</p>
+<div class="container">
+	<h2>User Data</h2>
+		<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text" class="form-control" name="name" [(ngModel)]="myName">
+				<p>{{myName}}</p>
+			</div>
+			<div class="form-group">
+				<label>Email</label>
+				<input type="text" class="form-control" name="email" [ngModel]="myEmail">
+			</div>
+			<div ngModelGroup="address">
+				<div class="form-group">
+					<label>City</label>
+					<input type="text" class="form-control" name="city" [(ngModel)]="myCity">
+					<p>{{myCity}}</p>
+				</div>
+				<div class="form-group">
+					<label>Pin</label>
+					<input type="text" class="form-control" name="pin" ngModel>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+</div><!-- 
+ngForm give two things
+1>form field values
+2>whether form is in valid or invalid state -->
+<p>--------------------------Model Driven Forms----------------------------------</p>
+<p>--------------------------MOdel Driven Forms-FormBuilder----------------------------------</p>
+
